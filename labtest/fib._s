@@ -1,0 +1,21 @@
+
+fib.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <fibonacci>:
+   0:	b538      	push	{r3, r4, r5, lr}
+   2:	4604      	mov	r4, r0
+   4:	2802      	cmp	r0, #2
+   6:	dd08      	ble.n	1a <fibonacci+0x1a>
+   8:	3801      	subs	r0, #1
+   a:	f7ff fffe 	bl	0 <fibonacci>
+   e:	4605      	mov	r5, r0
+  10:	1ea0      	subs	r0, r4, #2
+  12:	f7ff fffe 	bl	0 <fibonacci>
+  16:	4428      	add	r0, r5
+  18:	bd38      	pop	{r3, r4, r5, pc}
+  1a:	2001      	movs	r0, #1
+  1c:	bd38      	pop	{r3, r4, r5, pc}
+  1e:	bf00      	nop
