@@ -25,6 +25,13 @@ clean:
 
 QEMU_CMD = qemu-arm -g 1234 -L /usr/arm-linux-gnueabihf ./fibseq &
 CMD = yes 9 | $(call QEMU_CMD) && sleep 1
+
+qemu-run-wait-gdb: fibseq
+	yes 5 | qemu-arm -g 1234 -L /usr/arm-linux-gnueabihf ./fibseq
+
+qemu-gdb: 
+	arm-none-eabi-gdb -x gdbscript fibseq
+
 qemu: fibseq
-	yes 7 | $(call QEMU_CMD)
+	yes 5 | $(call QEMU_CMD)
 	arm-none-eabi-gdb -x gdbscript fibseq

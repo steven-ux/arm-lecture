@@ -1,0 +1,6 @@
+b fibonacci
+target remote :1234
+
+display $pc
+display $r0
+

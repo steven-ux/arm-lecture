@@ -1,0 +1,142 @@
+yes 5 | qemu-arm -g 1234 -L /usr/arm-linux-gnueabihf ./fibseq &
+arm-none-eabi-gdb -x gdbscript fibseq
+GNU gdb (7.6.50.20131218-0ubuntu1+1) 7.6.50.20131218-cvs
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "--host=i686-linux-gnu --target=arm-none-eabi".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from fibseq...done.
+Breakpoint 1 at 0x848e: file fib.s, line 18.
+0x4525cb80 in ?? ()
+(gdb) (gdb) (gdb) (gdb) (gdb) Continuing.
+
+Breakpoint 1, fibonacci () at fib.s:18
+18		subs r4, r0, #0
+2: $r0 = 5
+1: $pc = (void (*)()) 0x848e <fibonacci+2>
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) Continuing.
+
+Breakpoint 1, fibonacci () at fib.s:18
+18		subs r4, r0, #0
+2: $r0 = 4
+1: $pc = (void (*)()) 0x848e <fibonacci+2>
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x0000849e in fibonacci () at fib.s:29
+#2  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x0000849e in fibonacci () at fib.s:29
+#2  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) Continuing.
+
+Breakpoint 1, fibonacci () at fib.s:18
+18		subs r4, r0, #0
+2: $r0 = 3
+1: $pc = (void (*)()) 0x848e <fibonacci+2>
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x0000849e in fibonacci () at fib.s:29
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x0000849e in fibonacci () at fib.s:29
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) Continuing.
+
+Breakpoint 1, fibonacci () at fib.s:18
+18		subs r4, r0, #0
+2: $r0 = 2
+1: $pc = (void (*)()) 0x848e <fibonacci+2>
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x0000849e in fibonacci () at fib.s:29
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x0000849e in fibonacci () at fib.s:29
+#4  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x0000849e in fibonacci () at fib.s:29
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x0000849e in fibonacci () at fib.s:29
+#4  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) Continuing.
+
+Breakpoint 1, fibonacci () at fib.s:18
+18		subs r4, r0, #0
+2: $r0 = 1
+1: $pc = (void (*)()) 0x848e <fibonacci+2>
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x0000849e in fibonacci () at fib.s:29
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x0000849e in fibonacci () at fib.s:29
+#4  0x0000849e in fibonacci () at fib.s:29
+#5  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x0000849e in fibonacci () at fib.s:29
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x0000849e in fibonacci () at fib.s:29
+#4  0x0000849e in fibonacci () at fib.s:29
+#5  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) Continuing.
+
+Breakpoint 1, fibonacci () at fib.s:18
+18		subs r4, r0, #0
+2: $r0 = 0
+1: $pc = (void (*)()) 0x848e <fibonacci+2>
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x000084a8 in fibonacci () at fib.s:36
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x0000849e in fibonacci () at fib.s:29
+#4  0x0000849e in fibonacci () at fib.s:29
+#5  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x000084a8 in fibonacci () at fib.s:36
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x0000849e in fibonacci () at fib.s:29
+#4  0x0000849e in fibonacci () at fib.s:29
+#5  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) Continuing.
+
+Breakpoint 1, fibonacci () at fib.s:18
+18		subs r4, r0, #0
+2: $r0 = 1
+1: $pc = (void (*)()) 0x848e <fibonacci+2>
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x000084a8 in fibonacci () at fib.s:36
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x0000849e in fibonacci () at fib.s:29
+#4  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x000084a8 in fibonacci () at fib.s:36
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x0000849e in fibonacci () at fib.s:29
+#4  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) Continuing.
+
+Breakpoint 1, fibonacci () at fib.s:18
+18		subs r4, r0, #0
+2: $r0 = 2
+1: $pc = (void (*)()) 0x848e <fibonacci+2>
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x000084a8 in fibonacci () at fib.s:36
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) #0  fibonacci () at fib.s:18
+#1  0x000084a8 in fibonacci () at fib.s:36
+#2  0x0000849e in fibonacci () at fib.s:29
+#3  0x00008470 in main (argc=1, argv=0x4525b144) at fibseq.c:11
+(gdb) A debugging session is active.
+
+	Inferior 1 [Remote target] will be killed.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
